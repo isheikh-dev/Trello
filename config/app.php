@@ -178,7 +178,13 @@ return [
          * BoardModule Providers
          */
         BoardModule\Providers\BoardServiceProvider::class,
-    ],
+
+        /**
+         * UserModule Providers
+         */
+        UserModule\Providers\UserServiceProvider::class,
+
+     ],
 
     /*
     |--------------------------------------------------------------------------

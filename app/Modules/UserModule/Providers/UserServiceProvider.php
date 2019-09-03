@@ -3,10 +3,10 @@
 namespace UserModule\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use UserModule\Repositories\UserRepositoryEloquent;
-use UserModule\Repositories\UserRepositoryInterface;
+use UserModule\Repositories\AuthRepositoryEloquent;
+use UserModule\Repositories\AuthRepositoryInterface;
 
-class BoardServiceProvider extends ServiceProvider
+class UserServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -15,7 +15,7 @@ class BoardServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        app()->bind(UserRepositoryInterface::class, UserRepositoryEloquent::class); 
+        app()->bind(AuthRepositoryInterface::class, AuthRepositoryEloquent::class); 
     }
 
     /**

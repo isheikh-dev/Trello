@@ -54,7 +54,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return $this->boardService->show($id);
+        return $this->userService->show($id);
     }
 
     /**
