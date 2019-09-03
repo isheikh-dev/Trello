@@ -39,8 +39,10 @@
             "BoardModule\\": "app/Modules/BoardModule"
         },
         "classmap": [
-            "database/seeds",
-            "database/factories"
+            "database/seeds", 
+            "app/Modules/UserModule/database/seeds",
+            "database/factories",
+            "app/Modules/UserModule/database/factories"
         ]
     },
     "autoload-dev": {

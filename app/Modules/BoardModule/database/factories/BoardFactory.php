@@ -1,8 +1,7 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-
-use App\Board;
+use BoardModule\Board;
 use Faker\Generator as Faker;
 
 $factory->define(Board::class, function (Faker $faker) {
