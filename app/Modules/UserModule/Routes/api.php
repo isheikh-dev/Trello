@@ -5,9 +5,10 @@
 $namespace = 'UserModule\Http\Controllers\api';
 
 Route::group([
-    'prefix'        => 'api/board',
+    'prefix'        => 'api/user',
     'namespace'     => $namespace, 
-    'as'            => 'board'
+    'as'            => 'user'
 ], function() {
-    Route::get('show/{show}', 'boardController@show');
+    Route::post('register', 'AuthController@register');
+    Route::post('login', 'AuthController@login');
 });
