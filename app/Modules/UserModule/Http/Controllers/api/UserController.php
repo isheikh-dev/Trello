@@ -5,15 +5,15 @@ namespace BoardModule\Http\Controllers\api;
 use BoardModule\Board;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use BoardModule\Services\BoardService;
+use BoardModule\Services\UserService;
 
-class BoardController extends Controller
+class UserController extends Controller
 {
-    protected $boardService;
+    protected $userService;
 
-    public function __construct(BoardService $boardService)
+    public function __construct(UserService $userService)
     {
-        $this->boardService = $boardService;   
+        $this->userService = $userService;   
     }
     /**
      * Display a listing of the resource.

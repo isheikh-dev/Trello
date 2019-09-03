@@ -2,7 +2,7 @@
 
 // use Illuminate\Routing\Route;
 
-$namespace = 'BoardModule\Http\Controllers\api';
+$namespace = 'UserModule\Http\Controllers\api';
 
 Route::group([
     'prefix'        => 'api/board',

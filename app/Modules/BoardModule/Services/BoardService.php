@@ -1,7 +1,9 @@
 <?php 
 
 namespace BoardModule\Services;
-use App\Repositories\BoardRepositoryInterface;
+
+use BoardModule\Http\Resources\BoardResource;
+use BoardModule\Repositories\BoardRepositoryInterface;
 
 
 class BoardService {
@@ -14,6 +16,8 @@ class BoardService {
 
 
     public function show($id){
-        return $this->boardRepository->show($id);
+        // dd(1);
+        $board = $this->boardRepository->show($id);
+        return new BoardResource($board);
     }
 }

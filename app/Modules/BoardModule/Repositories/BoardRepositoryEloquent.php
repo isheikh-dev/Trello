@@ -1,6 +1,7 @@
 <?php 
 
 namespace BoardModule\Repositories;
+use BoardModule\Repositories\BoardRepositoryInterface;
 use BoardModule\Board;
 
 class BoardRepositoryEloquent implements BoardRepositoryInterface {

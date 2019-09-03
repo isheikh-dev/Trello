@@ -1,10 +1,10 @@
 <?php
 
-namespace BoardModule\Providers;
+namespace UserModule\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use BoardModule\Repositories\BoardRepositoryEloquent;
-use BoardModule\Repositories\BoardRepositoryInterface;
+use UserModule\Repositories\UserRepositoryEloquent;
+use UserModule\Repositories\UserRepositoryInterface;
 
 class BoardServiceProvider extends ServiceProvider
 {
@@ -15,7 +15,7 @@ class BoardServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        app()->bind(BoardRepositoryInterface::class, BoardRepositoryEloquent::class); 
+        app()->bind(UserRepositoryInterface::class, UserRepositoryEloquent::class); 
     }
 
     /**
@@ -28,5 +28,6 @@ class BoardServiceProvider extends ServiceProvider
        $ds = DIRECTORY_SEPARATOR;
        $this->loadMigrationsFrom(__DIR__.$ds. '..' .$ds. 'database' .$ds. 'migration');
        $this->loadRoutesFrom(__DIR__.$ds. '..' .$ds. 'Routes' .$ds. 'api.php');
+       $this->loadRoutesFrom(__DIR__.$ds. '..' .$ds. 'Routes' .$ds. 'web.php');
     }
 }
