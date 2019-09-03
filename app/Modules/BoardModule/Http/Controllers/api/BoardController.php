@@ -6,7 +6,7 @@ use BoardModule\Board;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use BoardModule\Services\BoardService;
-
+ 
 class BoardController extends Controller
 {
     protected $boardService;
@@ -53,8 +53,8 @@ class BoardController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        return $this->boardService->show($id);
+    { 
+         return  $this->boardService->show($id);    
     }
 
     /**

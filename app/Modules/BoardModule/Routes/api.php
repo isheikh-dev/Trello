@@ -9,5 +9,5 @@ Route::group([
     'namespace'     => $namespace, 
     'as'            => 'board'
 ], function() {
-    Route::get('show/{show}', 'boardController@show');
+    Route::get('show/{show}', 'BoardController@show');
 });
