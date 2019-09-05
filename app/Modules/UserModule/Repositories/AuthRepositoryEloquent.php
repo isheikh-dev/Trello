@@ -17,11 +17,9 @@ class AuthRepositoryEloquent implements AuthRepositoryInterface {
         $this->user = $user;
     }  
 
-    public function register($data)
+    public function create($data)
     {
-        $user =  $this->user->create(  $data->only('name','email', 'password')  );
-        $user->api_token =  Str::random(60);
-        $user->save();
+        $user =  $this->user->create($data->only('name','email','password')); 
         return $user;
     }
 
