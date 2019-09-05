@@ -2,10 +2,13 @@
 
 namespace UserModule;
 
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Passport\HasApiTokens;
+use App\BoardUser;
+use BoardModule\Board;
 
 class User extends Authenticatable
 {
@@ -27,5 +30,8 @@ class User extends Authenticatable
     
     public function setPasswordAttribute($attribute){
         $this->attributes['password'] = bcrypt($attribute);
+    }
+    public function boards(){
+        return $this->hasMany(Board::class)->using(BoardUser::class);
     }
 }
