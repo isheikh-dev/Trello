@@ -32,6 +32,6 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($attribute);
     }
     public function boards(){
-        return $this->hasMany(Board::class)->using(BoardUser::class);
+        return $this->belongsToMany(Board::class, 'board_users', 'user_id');
     }
 }

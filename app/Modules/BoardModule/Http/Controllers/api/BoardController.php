@@ -6,7 +6,6 @@ use BoardModule\Board;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use BoardModule\Http\Requests\BoardCreateRequest;
-use BoardModule\Http\Requests\BoardShowRequest;
 use BoardModule\Services\BoardService;
  
 class BoardController extends Controller
@@ -20,7 +19,7 @@ class BoardController extends Controller
  
     public function index()
     {
-        //
+       return $this->boardService->index();
     } 
 
  

@@ -2,9 +2,11 @@
 
 namespace BoardModule\Services;
 
+use BoardModule\Http\Resources\BoardCreatedResource;
 use BoardModule\Http\Resources\BoardShowResource;
 use BoardModule\Repositories\BoardRepositoryInterface;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use BoardModule\Http\Resources\BoardCollectionShowResource;
 
 class BoardService {
     protected $boardRepository;
@@ -12,11 +14,14 @@ class BoardService {
     public function __construct(BoardRepositoryInterface $boardRepository)
     {
         $this->boardRepository = $boardRepository;
+    } 
+
+    public function index(){
+        $boards = $this->boardRepository->index();
+        return new BoardCollectionShowResource($boards); 
     }
 
-
-    public function show($id){  
-        
+    public function show($id){   
         try{
             $board = $this->boardRepository->show($id);
             return new BoardShowResource($board);
@@ -25,11 +30,11 @@ class BoardService {
                                         'error' => 'Model not Found'
                                     ]);
          }
-    }
-
+    } 
+    
     public function store($request){ 
         $board = $this->boardRepository->create($request->only('title'));
-        return new BoardCreatedResource($board);
-
+        auth()->user()->boards()->save($board);
+        return new BoardCreatedResource($board); 
     }
 }

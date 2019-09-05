@@ -12,7 +12,9 @@ class BoardRepositoryEloquent implements BoardRepositoryInterface {
     {
         $this->board = $board;
     }  
-
+    public function index(){
+        return auth()->user()->boards()->get();
+    }
     public function show($id)
     {
         return $this->board->findOrFail($id);
