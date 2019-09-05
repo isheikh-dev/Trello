@@ -17,4 +17,8 @@ class BoardRepositoryEloquent implements BoardRepositoryInterface {
     {
         return $this->board->findOrFail($id);
     }
+    public function create($data)
+    { 
+        return $this->board->create($data);
+    }
 }

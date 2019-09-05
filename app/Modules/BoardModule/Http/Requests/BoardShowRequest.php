@@ -4,7 +4,7 @@ namespace BoardModule\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BoardCreateRequest extends FormRequest
+class BoardShowRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class BoardCreateRequest extends FormRequest
     public function rules()
     {
         return [
-           'title' => 'required|max:15|min:1'
+            'id' => 'required'
         ];
     }
 }

@@ -6,8 +6,7 @@ use UserModule\Http\Resources\AuthLoginResource;
 use UserModule\Repositories\AuthRepositoryInterface; 
 use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\Client;
-use UserModule\Http\Resources\AuthRegisterResource;
-
+ 
 use function GuzzleHttp\json_decode;
 
 class AuthService
@@ -88,6 +87,17 @@ class AuthService
                             $e->getCode()
                             );
     } 
+    public function logout(){
+        auth()->user()->tokens->each(function ($token, $key) {
+            $token->delete();
+        });
+
+        return response()->json([
+            'message' => 'Logged Out Successfuly',
+            'status'  => 'success', 
+            'statusCode' => 200
+        ]);
+    }
     
   
  

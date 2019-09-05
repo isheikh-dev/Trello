@@ -4,7 +4,7 @@ namespace BoardModule\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class BoardResource extends JsonResource
+class BoardCreatedResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,7 +15,12 @@ class BoardResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'title' => $this->title
+            'data'       => [
+                                'title' => $this->title
+                            ]
+            , 
+            'status'     => 'Success',
+            'statusCode' => 201
         ];
     }
 }
