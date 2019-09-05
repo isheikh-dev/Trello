@@ -1,13 +1,11 @@
-<?php
-
-// use Illuminate\Routing\Route;
-
+<?php 
+ 
 $namespace = 'BoardModule\Http\Controllers\api';
 
 Route::group([
-    'prefix'        => 'api/board',
-    'namespace'     => $namespace, 
-    'as'            => 'board'
+    'prefix'        => 'api',
+    'namespace'     => $namespace,  
+    'middleware'    => 'auth:api'
 ], function() {
-    Route::get('show/{show}', 'BoardController@show');
+    Route::resource('boards', 'BoardController');
 });
