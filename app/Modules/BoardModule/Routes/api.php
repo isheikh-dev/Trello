@@ -7,5 +7,7 @@ Route::group([
     'namespace'     => $namespace,  
     'middleware'    => 'auth:api'
 ], function() {
-    Route::resource('boards', 'BoardController');
+    Route::resource('boards', 'BoardController')->only([
+        'create', 'store', 'update', 'destroy', 'index'
+    ]);
 });

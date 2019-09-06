@@ -35,15 +35,14 @@ class CategoryService {
     
     public function store($request){ 
         $category = $this->categoryRepository->create($request->only('title'));
-        auth()->user()->boards()->save($category);
-        return new CategoryCreatedResource($category); 
+         return new CategoryCreatedResource($category); 
     }
 
     public function delete($id){ 
         try{
             $this->categoryRepository->delete($id);
             return response()->json( [
-                                    'Message'       => 'list Deleted Successfully' , 
+                                    'Message'       => 'Category Deleted Successfully' , 
                                     'status'     => 'Success',
                                     'statusCode' => 200
                                 ]);
