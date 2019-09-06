@@ -1,10 +1,10 @@
 <?php
 
-namespace BoardModule\Http\Requests;
+namespace CategoryModule\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BoardCreateRequest extends FormRequest
+class CategoryCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

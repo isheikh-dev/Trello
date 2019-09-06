@@ -1,8 +1,8 @@
 <?php 
 
-namespace BoardModule\Repositories;
+namespace CategoryModule\Repositories;
 
-interface BoardRepositoryInterface {
+interface CategoryRepositoryInterface {
     public function show($id);
     public function delete($id);
     public function create($data);

@@ -1,10 +1,10 @@
 <?php
 
-namespace BoardModule\Http\Resources;
+namespace CategoryModule\Http\Resources;
 
-use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Http\Resources\Json\JsonResource;
 
-class BoardCollectionShowResource extends ResourceCollection
+class CategoryCollectionShowResource extends JsonResource
 {
     /**
      * Transform the resource into an array.

@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 return [
 
@@ -183,6 +183,11 @@ return [
          * UserModule Providers
          */
         UserModule\Providers\UserServiceProvider::class,
+
+         /**
+         * UserModule Providers
+         */
+        CategoryModule\Providers\CategoryServiceProvider::class,
 
      ],
 

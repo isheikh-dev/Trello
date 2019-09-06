@@ -37,7 +37,8 @@
         "psr-4": {
             "App\\": "app/",
             "UserModule\\": "app/Modules/UserModule",
-            "BoardModule\\": "app/Modules/BoardModule"
+            "BoardModule\\": "app/Modules/BoardModule",
+            "CategoryModule\\": "app/Modules/CategoryModule"
         },
         "classmap": [
             "database/seeds", 

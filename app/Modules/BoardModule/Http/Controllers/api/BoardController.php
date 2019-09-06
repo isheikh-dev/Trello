@@ -2,12 +2,11 @@
 
 namespace BoardModule\Http\Controllers\api;
 
-use BoardModule\Board;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use BoardModule\Http\Requests\BoardCreateRequest;
 use BoardModule\Services\BoardService;
- 
+use Illuminate\Support\Facades\Request;
+
 class BoardController extends Controller
 {
     protected $boardService;
@@ -34,15 +33,15 @@ class BoardController extends Controller
          return  $this->boardService->show($id);    
     }
 
- 
-    public function update(Request $request, Board $board)
-    {
-        //
+    
+    public function update(BoardCreateRequest $request, $id)
+    { 
+         return $this->boardService->update($request, $id);         
     }
 
    
-    public function destroy(Board $board)
+    public function destroy($id)
     {
-        //
+          $this->boardService->delete($id);
     }
 }

@@ -3,7 +3,6 @@
 namespace BoardModule;
 
 use Illuminate\Database\Eloquent\Model;
-use BoardModule\BoardUser; 
 use UserModule\User;
 class Board extends Model
 {
