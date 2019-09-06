@@ -5,7 +5,7 @@
 $namespace = 'UserModule\Http\Controllers\api';
 
 Route::group([
-    'prefix'        => 'api/user',
+    'prefix'        => 'api/',
     'namespace'     => $namespace, 
     'as'            => 'user'
 ], function() {

@@ -38,7 +38,8 @@
             "App\\": "app/",
             "UserModule\\": "app/Modules/UserModule",
             "BoardModule\\": "app/Modules/BoardModule",
-            "CategoryModule\\": "app/Modules/CategoryModule"
+            "CategoryModule\\": "app/Modules/CategoryModule",
+            "GroupModule\\": "app/Modules/GroupModule"
         },
         "classmap": [
             "database/seeds", 

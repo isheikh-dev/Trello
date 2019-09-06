@@ -8,6 +8,6 @@ Route::group([
     'middleware'    => 'auth:api'
 ], function() {
     Route::resource('boards', 'BoardController')->only([
-        'create', 'store', 'update', 'destroy', 'index'
+        'store', 'update', 'destroy', 'index', 'show'
     ]);
 });

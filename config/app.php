@@ -185,9 +185,14 @@ return [
         UserModule\Providers\UserServiceProvider::class,
 
          /**
-         * UserModule Providers
+         * CategoryModule Providers
          */
         CategoryModule\Providers\CategoryServiceProvider::class,
+
+        /**
+         * GroupModule Providers
+         */
+        GroupModule\Providers\GroupServiceProvider::class,
 
      ],
 

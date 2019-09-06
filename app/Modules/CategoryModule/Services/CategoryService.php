@@ -41,7 +41,7 @@ class CategoryService {
     public function delete($id){ 
         try{
             $this->categoryRepository->delete($id);
-            return response()->json( [
+            return response()->json([
                                     'Message'       => 'Category Deleted Successfully' , 
                                     'status'     => 'Success',
                                     'statusCode' => 200
