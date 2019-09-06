@@ -25,6 +25,7 @@ class AuthService
         return $this->registerResponse($access_token);
         
     }
+
     public function registerResponse($access_token) 
     {
         return response()->json([
@@ -35,6 +36,7 @@ class AuthService
                     'statusCode' => 201
                 ]);
     }
+
     public function login($data)
     {  
         $client = new Client();   
@@ -44,18 +46,19 @@ class AuthService
          } catch(BadResponseException $e ){ 
             $this->handleBadResponseException($e); 
         }
-     }
+    }
 
     public function oauthFormParams($data)
     {
         return  [
             'grant_type' => 'password',
             'client_id'  => 2,
-            'client_secret' => '5moDs25iPQTTElC4eHP6PQ3KzRvvuf4TSNqqdf8j',
+            'client_secret' => 'YQWJph54vnWrtydIwANW4TR5LQ3s9iEqjyQQJh7E',
             'username' => $data->username,
             'password' => $data->password
         ];  
     }
+
     public function oauthLoginRequest($client, $data)
     { 
         // Be Sure to serve different port with terminal
@@ -64,6 +67,7 @@ class AuthService
         ]);  
         return $response->getBody();  
     } 
+
     public function handleBadResponseException($e)
     {
         if($e->getCode() == 400) { 
@@ -73,6 +77,7 @@ class AuthService
         }  
         return response()->json('Something Went wrong with the serveer', $e->getCode());
     }
+
     public function response_400($e)
     {
         return response()->json(
@@ -80,6 +85,7 @@ class AuthService
                             $e->getCode()
                             );
     }
+
     public function response_401($e)
     {
         return response()->json(
@@ -87,7 +93,9 @@ class AuthService
                             $e->getCode()
                             );
     } 
-    public function logout(){
+
+    public function logout()
+    {
         auth()->user()->tokens->each(function ($token, $key) {
             $token->delete();
         });
@@ -97,8 +105,5 @@ class AuthService
             'status'  => 'success', 
             'statusCode' => 200
         ]);
-    }
-    
-  
- 
+    }  
 }

@@ -17,6 +17,8 @@ class CreateTasksTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->boolean('complete')->default(false);
+            $table->unsignedBigInteger('group_id');
+            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
             $table->timestamps();
         });
     }
