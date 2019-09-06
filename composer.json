@@ -39,8 +39,9 @@
             "UserModule\\": "app/Modules/UserModule",
             "BoardModule\\": "app/Modules/BoardModule",
             "CategoryModule\\": "app/Modules/CategoryModule",
-            "GroupModule\\": "app/Modules/GroupModule"
-        },
+            "GroupModule\\": "app/Modules/GroupModule",
+            "TaskModule\\": "app/Modules/TaskModule"
+         },
         "classmap": [
             "database/seeds", 
             "app/Modules/UserModule/database/seeds",

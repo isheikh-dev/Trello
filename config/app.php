@@ -194,6 +194,11 @@ return [
          */
         GroupModule\Providers\GroupServiceProvider::class,
 
+        /**
+         * TaskModule Providers
+         */
+        TaskModule\Providers\TaskServiceProvider::class,
+
      ],
 
     /*
