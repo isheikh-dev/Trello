@@ -7,5 +7,7 @@ Route::group([
     'namespace'     => $namespace,  
     'middleware'    => 'auth:api'
 ], function() {
-    Route::resource('Categories', 'CategoryController');
+    Route::resource('Categories', 'CategoryController')->only([
+        'index', 'store', 'update', 'destory', 'show'
+    ]);
 });

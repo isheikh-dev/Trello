@@ -2,11 +2,12 @@
 
 namespace CategoryModule\Services;
 
+
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use CategoryModule\Http\Resources\CategoryCollectionShowResource;
 use CategoryModule\Http\Resources\CategoryCreatedResource;
 use CategoryModule\Http\Resources\CategoryShowResource;
 use CategoryModule\Repositories\CategoryRepositoryInterface;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-use CategoryModule\Http\Resources\CategoryCollectionShowResource;
  
 class CategoryService {
     protected $categoryRepository;

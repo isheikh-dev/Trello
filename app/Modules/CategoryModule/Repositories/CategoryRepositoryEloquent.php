@@ -4,7 +4,7 @@ namespace CategoryModule\Repositories;
 use CategoryModule\Repositories\CategoryRepositoryInterface;
 use CategoryModule\Category;
 
-class CategoryepositoryEloquent implements CategoryRepositoryInterface 
+class CategoryRepositoryEloquent implements CategoryRepositoryInterface 
 {
 
     protected $category;
